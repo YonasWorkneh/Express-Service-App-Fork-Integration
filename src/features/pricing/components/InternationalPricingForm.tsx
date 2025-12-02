@@ -36,6 +36,7 @@ export default function InternationalPricingForm() {
   const navigate = useNavigate();
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [expandedSection, setExpandedSection] = useState<"standard" | "sameDay" | "overnight" | null>("standard");
   const [selectedRows, setSelectedRows] = useState<{
     standard: Set<number>;
     sameDay: Set<number>;
@@ -131,6 +132,8 @@ export default function InternationalPricingForm() {
               error={errors.standard}
               touched={touched.standard}
               incrementValue={10}
+              isExpanded={expandedSection === "standard"}
+              onToggle={() => setExpandedSection(expandedSection === "standard" ? null : "standard")}
             />
 
             <ServiceTypeSection
@@ -167,6 +170,8 @@ export default function InternationalPricingForm() {
               error={errors.sameDay}
               touched={touched.sameDay}
               incrementValue={10}
+              isExpanded={expandedSection === "sameDay"}
+              onToggle={() => setExpandedSection(expandedSection === "sameDay" ? null : "sameDay")}
             />
 
             <ServiceTypeSection
@@ -203,6 +208,8 @@ export default function InternationalPricingForm() {
               error={errors.overnight}
               touched={touched.overnight}
               incrementValue={10}
+              isExpanded={expandedSection === "overnight"}
+              onToggle={() => setExpandedSection(expandedSection === "overnight" ? null : "overnight")}
             />
 
             <AdditionalChargesSection

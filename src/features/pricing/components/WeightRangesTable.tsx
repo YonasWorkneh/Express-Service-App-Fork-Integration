@@ -34,7 +34,6 @@ export default function WeightRangesTable({
   onAddRange,
   onDeleteSelected,
   fieldPrefix,
-  incrementValue = 5,
 }: WeightRangesTableProps) {
   const allSelected =
     selectedRows.size === weightRanges.length && weightRanges.length > 0;
@@ -51,7 +50,7 @@ export default function WeightRangesTable({
               onClick={onDeleteSelected}
             >
               <Trash2 className="h-4 w-4" />
-              <span>Delete Selected</span>
+              <span className="text-sm">Delete Selected</span>
             </button>
           )}
           <button
@@ -74,9 +73,7 @@ export default function WeightRangesTable({
                   checked={allSelected}
                   onCheckedChange={(checked) => {
                     if (checked) {
-                      onSelectionChange(
-                        new Set(weightRanges.map((_, i) => i))
-                      );
+                      onSelectionChange(new Set(weightRanges.map((_, i) => i)));
                     } else {
                       onSelectionChange(new Set());
                     }
@@ -148,4 +145,3 @@ export default function WeightRangesTable({
     </div>
   );
 }
-

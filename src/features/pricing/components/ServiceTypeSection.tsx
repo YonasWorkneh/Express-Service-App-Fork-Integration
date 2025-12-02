@@ -2,7 +2,6 @@ import { Field } from "formik";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
 import WeightRangesTable from "./WeightRangesTable";
 
 interface WeightRange {
@@ -24,6 +23,8 @@ interface ServiceTypeSectionProps {
   error?: string;
   touched?: boolean;
   incrementValue?: number;
+  isExpanded: boolean;
+  onToggle: () => void;
 }
 
 export default function ServiceTypeSection({
@@ -39,8 +40,9 @@ export default function ServiceTypeSection({
   error,
   touched,
   incrementValue = 5,
+  isExpanded,
+  onToggle,
 }: ServiceTypeSectionProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <div className="bg-gray-50 p-6 rounded-lg space-y-4 mb-6">
@@ -49,7 +51,7 @@ export default function ServiceTypeSection({
         <button
           type="button"
           className="p-2 !bg-gray-200 rounded-lg cursor-pointer transition-colors"
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={onToggle}
         >
           {isExpanded ? (
             <ChevronUp className="h-5 w-5" />

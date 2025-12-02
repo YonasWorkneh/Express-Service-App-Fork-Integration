@@ -207,7 +207,7 @@ const RevokeManager = () => {
                       onBlur={() =>
                         setTimeout(() => setShowManagerDropdown(false), 200)
                       }
-                      className="py-7"
+                      className="py-2"
                     />
                     {values.managerID && (
                       <button
@@ -278,7 +278,7 @@ const RevokeManager = () => {
                       onBlur={() =>
                         setTimeout(() => setShowBranchDropdown(false), 200)
                       }
-                      className="py-7"
+                      className="py-2"
                     />
                     {values.branchID && (
                       <button

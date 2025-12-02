@@ -226,7 +226,7 @@ const CreateCustomer = () => {
                     onValueChange={(val) => setFieldValue("type", val)}
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.type && touched.type ? "border-red-500" : ""
                       }`}
                     >
@@ -247,7 +247,7 @@ const CreateCustomer = () => {
                     as={Input}
                     name="name"
                     placeholder="Enter customer full name"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.name && touched.name ? "border-red-500" : ""
                     }`}
                   />
@@ -262,7 +262,7 @@ const CreateCustomer = () => {
                     type="email"
                     name="email"
                     placeholder="customer@email.com"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.email && touched.email ? "border-red-500" : ""
                     }`}
                   />
@@ -277,7 +277,7 @@ const CreateCustomer = () => {
                     type="tel"
                     name="phone"
                     placeholder="+251 911 234 567"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.phone && touched.phone ? "border-red-500" : ""
                     }`}
                   />
@@ -296,7 +296,7 @@ const CreateCustomer = () => {
                     as={Input}
                     name="address"
                     placeholder="Enter full address"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.address && touched.address ? "border-red-500" : ""
                     }`}
                   />
@@ -312,7 +312,7 @@ const CreateCustomer = () => {
                     as={Input}
                     name="city"
                     placeholder="e.g., Addis Ababa, Dire Dawa"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.city && touched.city ? "border-red-500" : ""
                     }`}
                   />
@@ -329,7 +329,7 @@ const CreateCustomer = () => {
                     }
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.preferredLanguage && touched.preferredLanguage
                           ? "border-red-500"
                           : ""
@@ -359,7 +359,7 @@ const CreateCustomer = () => {
                     }
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.communicationPreference &&
                         touched.communicationPreference
                           ? "border-red-500"
@@ -397,7 +397,7 @@ const CreateCustomer = () => {
                       as={Input}
                       name="companyName"
                       placeholder="Enter company name"
-                      className={`py-7 ${
+                      className={`py-2 ${
                         errors.companyName && touched.companyName
                           ? "border-red-500"
                           : ""
@@ -415,7 +415,7 @@ const CreateCustomer = () => {
                       as={Input}
                       name="contactPerson"
                       placeholder="Enter contact person name"
-                      className={`py-7 ${
+                      className={`py-2 ${
                         errors.contactPerson && touched.contactPerson
                           ? "border-red-500"
                           : ""
@@ -433,7 +433,7 @@ const CreateCustomer = () => {
                       as={Input}
                       name="contractNumber"
                       placeholder="Enter contract number"
-                      className="py-7"
+                      className="py-2"
                     />
                   </div>
                   <div>
@@ -443,7 +443,7 @@ const CreateCustomer = () => {
                       type="number"
                       name="creditLimit"
                       placeholder="0"
-                      className="py-7"
+                      className="py-2"
                     />
                   </div>
                   <div className="lg:col-span-2">
@@ -452,7 +452,7 @@ const CreateCustomer = () => {
                       as={Input}
                       name="paymentTerms"
                       placeholder="e.g., Net 30, Net 60"
-                      className="py-7"
+                      className="py-2"
                     />
                   </div>
                 </div>

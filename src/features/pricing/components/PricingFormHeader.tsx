@@ -22,11 +22,10 @@ export default function PricingFormHeader({ title }: PricingFormHeaderProps) {
       </div>
       <div className="flex gap-5 items-center justify-center mb-6">
         <div className="flex gap-4 items-center">
-          <IoPricetags className="text-3xl text-blue-500" />
-          <h1 className="text-[30px] font-medium text-gray-700">{title}</h1>
+          <IoPricetags className="text-[28px] text-blue-500" />
+          <h1 className="text-[26px] font-medium text-gray-700">{title}</h1>
         </div>
       </div>
     </header>
   );
 }
-

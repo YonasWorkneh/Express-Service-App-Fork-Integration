@@ -26,9 +26,9 @@ const demoBranches = [
 ];
 
 const AssignManager = () => {
-  const [status] = useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
+  const [status] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
   const [message] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -207,7 +207,7 @@ const AssignManager = () => {
                       onBlur={() =>
                         setTimeout(() => setShowManagerDropdown(false), 200)
                       }
-                      className="py-7"
+                      className="py-2"
                     />
                     {values.managerID && (
                       <button
@@ -278,7 +278,7 @@ const AssignManager = () => {
                       onBlur={() =>
                         setTimeout(() => setShowBranchDropdown(false), 200)
                       }
-                      className="py-7"
+                      className="py-2"
                     />
                     {values.branchID && (
                       <button

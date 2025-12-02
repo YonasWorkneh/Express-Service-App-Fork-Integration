@@ -239,7 +239,7 @@ const CreateComplaint = () => {
                     onValueChange={(val) => setFieldValue("customerId", val)}
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.customerId && touched.customerId
                           ? "border-red-500"
                           : ""
@@ -272,7 +272,7 @@ const CreateComplaint = () => {
                     as={Input}
                     name="orderId"
                     placeholder="e.g., ORD-2024-001"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.orderId && touched.orderId ? "border-red-500" : ""
                     }`}
                   />
@@ -294,7 +294,7 @@ const CreateComplaint = () => {
                     onValueChange={(val) => setFieldValue("type", val)}
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.type && touched.type ? "border-red-500" : ""
                       }`}
                     >
@@ -318,7 +318,7 @@ const CreateComplaint = () => {
                     onValueChange={(val) => setFieldValue("priority", val)}
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.priority && touched.priority
                           ? "border-red-500"
                           : ""
@@ -346,7 +346,7 @@ const CreateComplaint = () => {
                     onValueChange={(val) => setFieldValue("assignedTo", val)}
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.assignedTo && touched.assignedTo
                           ? "border-red-500"
                           : ""
@@ -388,7 +388,7 @@ const CreateComplaint = () => {
                     as={Input}
                     name="subject"
                     placeholder="Brief summary of the complaint"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.subject && touched.subject ? "border-red-500" : ""
                     }`}
                   />
