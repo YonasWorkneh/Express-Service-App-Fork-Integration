@@ -164,7 +164,7 @@ export default function OrderForm() {
                     as={Input}
                     name="name"
                     placeholder="Customer name"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.name && touched.name ? "border-red-500" : ""
                     }`}
                   />
@@ -179,7 +179,7 @@ export default function OrderForm() {
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.email && touched.email ? "border-red-500" : ""
                     }`}
                   />
@@ -194,7 +194,7 @@ export default function OrderForm() {
                     type="tel"
                     name="phone"
                     placeholder="Phone"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.phone && touched.phone ? "border-red-500" : ""
                     }`}
                   />
@@ -232,7 +232,7 @@ export default function OrderForm() {
                     as={Input}
                     name="receiverName"
                     placeholder="Receiver name"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.receiverName && touched.receiverName
                         ? "border-red-500"
                         : ""
@@ -251,7 +251,7 @@ export default function OrderForm() {
                     type="email"
                     name="receiverEmail"
                     placeholder="Receiver email"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.receiverEmail && touched.receiverEmail
                         ? "border-red-500"
                         : ""
@@ -270,7 +270,7 @@ export default function OrderForm() {
                     type="tel"
                     name="receiverPhone"
                     placeholder="Receiver phone"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.receiverPhone && touched.receiverPhone
                         ? "border-red-500"
                         : ""
@@ -315,7 +315,7 @@ export default function OrderForm() {
                   onValueChange={(val) => setFieldValue("serviceType", val)}
                 >
                   <SelectTrigger
-                    className={`py-7 !w-full bg-none border ${
+                    className={`py-2 !w-full bg-none border ${
                       errors.serviceType && touched.serviceType
                         ? "border-red-500"
                         : ""
@@ -343,7 +343,7 @@ export default function OrderForm() {
                   onValueChange={(val) => setFieldValue("fulfillmentType", val)}
                 >
                   <SelectTrigger
-                    className={`bg-none py-7 !w-full ${
+                    className={`bg-none py-2 !w-full ${
                       errors.fulfillmentType && touched.fulfillmentType
                         ? "border-red-500"
                         : ""
@@ -368,7 +368,7 @@ export default function OrderForm() {
                   value={String(values.senderEntity)}
                   onValueChange={(val) => setFieldValue("senderEntity", val)}
                 >
-                  <SelectTrigger className="py-7 !w-full">
+                  <SelectTrigger className="py-2 !w-full">
                     <SelectValue placeholder="Indvidual/Company" />
                   </SelectTrigger>
                   <SelectContent>
@@ -390,7 +390,7 @@ export default function OrderForm() {
                     value={String(values.shipmentType)}
                     onValueChange={(val) => setFieldValue("shipmentType", val)}
                   >
-                    <SelectTrigger className="py-7 !w-full">
+                    <SelectTrigger className="py-2 !w-full">
                       <SelectValue placeholder="Select shipment type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -407,7 +407,7 @@ export default function OrderForm() {
                     type="number"
                     step="0.1"
                     name="quantity"
-                    className={`py-7`}
+                    className={`py-2`}
                   />
                 </div>
 
@@ -418,7 +418,7 @@ export default function OrderForm() {
                     type="number"
                     step="0.1"
                     name="weight"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.weight && touched.weight ? "border-red-500" : ""
                     }`}
                   />
@@ -435,7 +435,7 @@ export default function OrderForm() {
                         type="number"
                         step="0.1"
                         name="length"
-                        className={`py-7`}
+                        className={`py-2`}
                       />
                     </div>
                     <div>
@@ -445,7 +445,7 @@ export default function OrderForm() {
                         type="number"
                         step="0.1"
                         name="width"
-                        className={`py-7`}
+                        className={`py-2`}
                       />
                     </div>
                     <div>
@@ -455,7 +455,7 @@ export default function OrderForm() {
                         type="number"
                         step="0.1"
                         name="height"
-                        className={`py-7`}
+                        className={`py-2`}
                       />
                     </div>
                   </>
@@ -468,7 +468,7 @@ export default function OrderForm() {
                     value={String(values.shipmentType)}
                     onValueChange={(val) => setFieldValue("category", val)}
                   >
-                    <SelectTrigger className="py-7 !w-full">
+                    <SelectTrigger className="py-2 !w-full">
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent>
@@ -486,7 +486,7 @@ export default function OrderForm() {
                       setFieldValue("isFragile", val === "true" ? true : false)
                     }
                   >
-                    <SelectTrigger className="!w-full py-7">
+                    <SelectTrigger className="!w-full py-2">
                       <SelectValue placeholder="Fragile ?" />
                     </SelectTrigger>
                     <SelectContent>
@@ -506,7 +506,7 @@ export default function OrderForm() {
                       )
                     }
                   >
-                    <SelectTrigger className="!w-full py-7">
+                    <SelectTrigger className="!w-full py-2">
                       <SelectValue placeholder="Is Unusual ?" />
                     </SelectTrigger>
                     <SelectContent>
@@ -536,7 +536,7 @@ export default function OrderForm() {
                     onValueChange={(val) => setFieldValue("destination", val)}
                   >
                     <SelectTrigger
-                      className={`!w-full py-7 ${
+                      className={`!w-full py-2 ${
                         errors.destination && touched.destination
                           ? "border-red-500"
                           : ""
@@ -585,7 +585,7 @@ export default function OrderForm() {
                   </Button>
 
                   <Input
-                    className="py-7 font-bold !text-2xl border-gray-300"
+                    className="py-2 font-bold !text-2xl border-gray-300"
                     disabled={true}
                     value={estimatePrice}
                   />

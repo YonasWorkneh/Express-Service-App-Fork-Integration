@@ -69,7 +69,7 @@ export default function ServiceTypeSection({
               step="0.01"
               name={fieldName}
               placeholder={`Enter ${serviceLabel.toLowerCase()}`}
-              className={`py-7 ${error && touched ? "border-red-500" : ""}`}
+              className={`py-2 !w-1/2 ${error && touched ? "border-red-500" : ""}`}
             />
             {error && touched && (
               <p className="text-red-500 text-sm mt-1">{error}</p>

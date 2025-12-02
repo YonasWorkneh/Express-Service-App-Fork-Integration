@@ -16,9 +16,9 @@ import { IoArrowBack, IoPersonAdd, IoEye, IoEyeOff } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
 
 const CreateStaff = () => {
-  const [status] = useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
+  const [status] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle"
+  );
   const [message] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [loading] = useState(false);
@@ -182,7 +182,7 @@ const CreateStaff = () => {
                     as={Input}
                     name="name"
                     placeholder="Enter staff full name"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.name && touched.name ? "border-red-500" : ""
                     }`}
                   />
@@ -197,7 +197,7 @@ const CreateStaff = () => {
                     type="email"
                     name="email"
                     placeholder="staff@company.com"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.email && touched.email ? "border-red-500" : ""
                     }`}
                   />
@@ -212,7 +212,7 @@ const CreateStaff = () => {
                     type="tel"
                     name="phone"
                     placeholder="+251 911 234 567"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.phone && touched.phone ? "border-red-500" : ""
                     }`}
                   />
@@ -227,7 +227,7 @@ const CreateStaff = () => {
                     type={showPassword ? "text" : "password"}
                     name="password"
                     placeholder="Enter password"
-                    className={`py-7 pr-10 ${
+                    className={`py-2 pr-10 ${
                       errors.password && touched.password
                         ? "border-red-500"
                         : ""
@@ -262,7 +262,7 @@ const CreateStaff = () => {
                     onValueChange={(val) => setFieldValue("role", val)}
                   >
                     <SelectTrigger
-                      className={`py-7 !w-full ${
+                      className={`py-2 !w-full ${
                         errors.role && touched.role ? "border-red-500" : ""
                       }`}
                     >
@@ -288,7 +288,7 @@ const CreateStaff = () => {
                     as={Input}
                     name="branchId"
                     placeholder="Enter branch ID (e.g., B001)"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.branchId && touched.branchId
                         ? "border-red-500"
                         : ""

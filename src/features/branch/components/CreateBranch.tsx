@@ -184,7 +184,7 @@ const CreateBranch = () => {
                     as={Input}
                     name="name"
                     placeholder="Enter branch name"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.name && touched.name ? "border-red-500" : ""
                     }`}
                   />
@@ -198,7 +198,7 @@ const CreateBranch = () => {
                     as={Input}
                     name="location"
                     placeholder="e.g., Addis Ababa, Dire Dawa"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.location && touched.location
                         ? "border-red-500"
                         : ""
@@ -217,7 +217,7 @@ const CreateBranch = () => {
                     type="tel"
                     name="phone"
                     placeholder="+251 911 234 567"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.phone && touched.phone ? "border-red-500" : ""
                     }`}
                   />
@@ -232,7 +232,7 @@ const CreateBranch = () => {
                     type="email"
                     name="email"
                     placeholder="branch@company.com"
-                    className={`py-7 ${
+                    className={`py-2 ${
                       errors.email && touched.email ? "border-red-500" : ""
                     }`}
                   />

@@ -42,7 +42,7 @@ export default function AdditionalChargesSection({
           step="0.01"
           name="costPerKm"
           placeholder="Enter cost per km"
-          className={`py-7 ${
+          className={`py-2 !w-1/2 ${
             costPerKmError && costPerKmTouched ? "border-red-500" : ""
           }`}
         />
@@ -60,7 +60,7 @@ export default function AdditionalChargesSection({
             step="0.01"
             name="airportFee"
             placeholder="Enter airport fee"
-            className={`py-7 ${
+            className={`py-2 !w-1/2 ${
               airportFeeError && airportFeeTouched ? "border-red-500" : ""
             }`}
           />
@@ -78,7 +78,7 @@ export default function AdditionalChargesSection({
           step="0.01"
           name="profitMargin"
           placeholder="Enter profit margin percentage"
-          className={`py-7 ${
+          className={`py-2 !w-1/2 ${
             profitMarginError && profitMarginTouched ? "border-red-500" : ""
           }`}
         />
