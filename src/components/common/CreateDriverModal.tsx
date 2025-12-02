@@ -25,6 +25,7 @@ interface DriverData {
   name: string;
   email: string;
   phone: string;
+  driverType: string;
   vehicle: string;
   vehicleType: string;
   capacity: number;
@@ -44,6 +45,7 @@ export default function CreateDriverModal({
     name: "",
     email: "",
     phone: "",
+    driverType: "inhouse",
     vehicle: "",
     vehicleType: "",
     capacity: 0,
@@ -80,6 +82,7 @@ export default function CreateDriverModal({
         name: "",
         email: "",
         phone: "",
+        driverType: "inhouse",
         vehicle: "",
         vehicleType: "",
         capacity: 0,
@@ -167,6 +170,37 @@ export default function CreateDriverModal({
                     placeholder="DL123456789"
                     required
                   />
+                </div>
+                <div className="md:col-span-2">
+                  <Label className="mb-2">Driver Type *</Label>
+                  <div className="flex gap-6 mt-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="driverType"
+                        value="inhouse"
+                        checked={formData.driverType === "inhouse"}
+                        onChange={(e) =>
+                          handleInputChange("driverType", e.target.value)
+                        }
+                        className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                      />
+                      <span className="text-sm text-gray-700">Inhouse</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="driverType"
+                        value="external"
+                        checked={formData.driverType === "external"}
+                        onChange={(e) =>
+                          handleInputChange("driverType", e.target.value)
+                        }
+                        className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                      />
+                      <span className="text-sm text-gray-700">External</span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
