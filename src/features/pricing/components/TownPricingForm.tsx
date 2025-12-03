@@ -57,11 +57,11 @@ export default function TownPricingForm() {
     sameDayWeightRanges: [{ from: "1", to: "3", price: 0 }],
     overnightWeightRanges: [{ from: "1", to: "3", price: 0 }],
     driverCommission: [
-      { category: "bicycle", fixedCost: 0, driverCost: 0 },
-      { category: "scooter", fixedCost: 0, driverCost: 0 },
-      { category: "motorcycle", fixedCost: 0, driverCost: 0 },
-      { category: "automobile", fixedCost: 0, driverCost: 0 },
-      { category: "cargo car", fixedCost: 0, driverCost: 0 },
+      { category: "bicycle", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "scooter", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "motorcycle", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "automobile", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "cargo car", costPerKm: 0, fixedCost: 0, driverCost: 0 },
     ],
   };
 
@@ -221,12 +221,9 @@ export default function TownPricingForm() {
             />
 
             <AdditionalChargesSection
-              costPerKmError={errors.costPerKm}
-              costPerKmTouched={touched.costPerKm}
               profitMarginError={errors.profitMargin}
               profitMarginTouched={touched.profitMargin}
               driverCommission={values.driverCommission}
-              showAirportFee={false}
             />
 
             <ActionButtons />

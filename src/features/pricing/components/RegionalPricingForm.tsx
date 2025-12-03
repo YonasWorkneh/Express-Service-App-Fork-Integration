@@ -36,7 +36,9 @@ export default function RegionalPricingForm() {
   const navigate = useNavigate();
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [expandedSection, setExpandedSection] = useState<"standard" | "sameDay" | "overnight" | null>("standard");
+  const [expandedSection, setExpandedSection] = useState<
+    "standard" | "sameDay" | "overnight" | null
+  >("standard");
   const [selectedRows, setSelectedRows] = useState<{
     standard: Set<number>;
     sameDay: Set<number>;
@@ -59,11 +61,11 @@ export default function RegionalPricingForm() {
     sameDayWeightRanges: [{ from: "1", to: "3", price: 0 }],
     overnightWeightRanges: [{ from: "1", to: "3", price: 0 }],
     driverCommission: [
-      { category: "bicycle", fixedCost: 0, driverCost: 0 },
-      { category: "scooter", fixedCost: 0, driverCost: 0 },
-      { category: "motorcycle", fixedCost: 0, driverCost: 0 },
-      { category: "automobile", fixedCost: 0, driverCost: 0 },
-      { category: "cargo car", fixedCost: 0, driverCost: 0 },
+      { category: "bicycle", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "scooter", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "motorcycle", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "automobile", costPerKm: 0, fixedCost: 0, driverCost: 0 },
+      { category: "cargo car", costPerKm: 0, fixedCost: 0, driverCost: 0 },
     ],
   };
 
@@ -131,7 +133,11 @@ export default function RegionalPricingForm() {
               touched={touched.standard}
               incrementValue={5}
               isExpanded={expandedSection === "standard"}
-              onToggle={() => setExpandedSection(expandedSection === "standard" ? null : "standard")}
+              onToggle={() =>
+                setExpandedSection(
+                  expandedSection === "standard" ? null : "standard"
+                )
+              }
             />
 
             <ServiceTypeSection
@@ -169,7 +175,11 @@ export default function RegionalPricingForm() {
               touched={touched.sameDay}
               incrementValue={5}
               isExpanded={expandedSection === "sameDay"}
-              onToggle={() => setExpandedSection(expandedSection === "sameDay" ? null : "sameDay")}
+              onToggle={() =>
+                setExpandedSection(
+                  expandedSection === "sameDay" ? null : "sameDay"
+                )
+              }
             />
 
             <ServiceTypeSection
@@ -207,18 +217,17 @@ export default function RegionalPricingForm() {
               touched={touched.overnight}
               incrementValue={5}
               isExpanded={expandedSection === "overnight"}
-              onToggle={() => setExpandedSection(expandedSection === "overnight" ? null : "overnight")}
+              onToggle={() =>
+                setExpandedSection(
+                  expandedSection === "overnight" ? null : "overnight"
+                )
+              }
             />
 
             <AdditionalChargesSection
-              costPerKmError={errors.costPerKm}
-              costPerKmTouched={touched.costPerKm}
-              airportFeeError={errors.airportFee}
-              airportFeeTouched={touched.airportFee}
               profitMarginError={errors.profitMargin}
               profitMarginTouched={touched.profitMargin}
               driverCommission={values.driverCommission}
-              showAirportFee={true}
             />
 
             <ActionButtons />

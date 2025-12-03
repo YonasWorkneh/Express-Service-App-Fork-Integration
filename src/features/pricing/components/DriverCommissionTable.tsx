@@ -11,6 +11,7 @@ import {
 
 interface DriverCommission {
   category: string;
+  costPerKm: number;
   fixedCost: number;
   driverCost: number;
 }
@@ -25,45 +26,58 @@ export default function DriverCommissionTable({
   return (
     <div className="mt-6">
       <h3 className="text-md font-medium mb-4">Driver Commission</h3>
-      <div className="border rounded-lg overflow-hidden">
-        <Table className="border-separate border-spacing-0">
+      <div className="border rounded-lg overflow-hidden max-w-2xl">
+        <Table className="border-separate border-spacing-0 w-full table-fixed">
           <TableHeader>
             <TableRow className="bg-gray-50">
-              <TableHead className="text-gray-600 font-medium border border-gray-200">
+              <TableHead className="text-gray-600 font-medium border border-gray-200 text-xs px-2 py-1 w-32">
                 Vehicle Category
               </TableHead>
-              <TableHead className="text-gray-600 font-medium border border-gray-200">
+              <TableHead className="text-gray-600 font-medium border border-gray-200 text-xs px-2 py-1 w-24">
+                Cost per km ($)
+              </TableHead>
+              <TableHead className="text-gray-600 font-medium border border-gray-200 text-xs px-2 py-1 w-24">
                 Fixed Cost ($)
               </TableHead>
-              <TableHead className="text-gray-600 font-medium border border-gray-200">
-                Driver Cost ($)
+              <TableHead className="text-gray-600 font-medium border border-gray-200 text-xs px-2 py-1 w-28">
+                Cost in Percentage (%)
               </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {driverCommission.map((commission, index) => (
               <TableRow key={index}>
-                <TableCell className="font-medium capitalize border border-gray-200">
+                <TableCell className="font-medium capitalize border border-gray-200 text-xs px-2 py-1">
                   {commission.category}
                 </TableCell>
-                <TableCell className="border border-gray-200">
+                <TableCell className="border border-gray-200 px-1 py-0.5">
+                  <Field
+                    as={Input}
+                    type="number"
+                    step="0.01"
+                    name={`driverCommission.${index}.costPerKm`}
+                    placeholder="Cost"
+                    className="py-1 px-1 text-xs border-0 shadow-none focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 h-7"
+                  />
+                </TableCell>
+                <TableCell className="border border-gray-200 px-1 py-0.5">
                   <Field
                     as={Input}
                     type="number"
                     step="0.01"
                     name={`driverCommission.${index}.fixedCost`}
-                    placeholder="Fixed cost"
-                    className="py-2 border-0 shadow-none focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
+                    placeholder="Fixed"
+                    className="py-1 px-1 text-xs border-0 shadow-none focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 h-7"
                   />
                 </TableCell>
-                <TableCell className="border border-gray-200">
+                <TableCell className="border border-gray-200 px-1 py-0.5">
                   <Field
                     as={Input}
                     type="number"
                     step="0.01"
                     name={`driverCommission.${index}.driverCost`}
-                    placeholder="Driver cost"
-                    className="py-2 border-0 shadow-none focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
+                    placeholder="Cost %"
+                    className="py-1 px-1 text-xs border-0 shadow-none focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 h-7"
                   />
                 </TableCell>
               </TableRow>
@@ -74,4 +88,3 @@ export default function DriverCommissionTable({
     </div>
   );
 }
-
