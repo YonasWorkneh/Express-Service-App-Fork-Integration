@@ -14,17 +14,18 @@ interface ServiceTypeSectionProps {
   serviceName: string;
   serviceLabel: string;
   fieldName: string;
-  weightRanges: WeightRange[];
-  selectedRows: Set<number>;
-  onSelectionChange: (selectedRows: Set<number>) => void;
-  onAddRange: () => void;
-  onDeleteSelected: () => void;
-  fieldPrefix: string;
+  weightRanges?: WeightRange[];
+  selectedRows?: Set<number>;
+  onSelectionChange?: (selectedRows: Set<number>) => void;
+  onAddRange?: () => void;
+  onDeleteSelected?: () => void;
+  fieldPrefix?: string;
   error?: string;
   touched?: boolean;
   incrementValue?: number;
   isExpanded: boolean;
   onToggle: () => void;
+  showWeightRanges?: boolean;
 }
 
 export default function ServiceTypeSection({
@@ -42,6 +43,7 @@ export default function ServiceTypeSection({
   incrementValue = 5,
   isExpanded,
   onToggle,
+  showWeightRanges = true,
 }: ServiceTypeSectionProps) {
 
   return (
@@ -78,15 +80,17 @@ export default function ServiceTypeSection({
             )}
           </div>
 
-          <WeightRangesTable
-            weightRanges={weightRanges}
-            selectedRows={selectedRows}
-            onSelectionChange={onSelectionChange}
-            onAddRange={onAddRange}
-            onDeleteSelected={onDeleteSelected}
-            fieldPrefix={fieldPrefix}
-            incrementValue={incrementValue}
-          />
+          {showWeightRanges && weightRanges && selectedRows && onSelectionChange && onAddRange && onDeleteSelected && fieldPrefix && (
+            <WeightRangesTable
+              weightRanges={weightRanges}
+              selectedRows={selectedRows}
+              onSelectionChange={onSelectionChange}
+              onAddRange={onAddRange}
+              onDeleteSelected={onDeleteSelected}
+              fieldPrefix={fieldPrefix}
+              incrementValue={incrementValue}
+            />
+          )}
         </>
       )}
     </div>

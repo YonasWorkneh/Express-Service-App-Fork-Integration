@@ -36,15 +36,6 @@ export default function TownPricingForm() {
   const [expandedSection, setExpandedSection] = useState<
     "standard" | "sameDay" | "overnight" | null
   >("standard");
-  const [selectedRows, setSelectedRows] = useState<{
-    standard: Set<number>;
-    sameDay: Set<number>;
-    overnight: Set<number>;
-  }>({
-    standard: new Set(),
-    sameDay: new Set(),
-    overnight: new Set(),
-  });
 
   const initialValues = {
     zone: "town",
@@ -53,9 +44,6 @@ export default function TownPricingForm() {
     overnight: 0,
     costPerKm: 0,
     profitMargin: 0,
-    standardWeightRanges: [{ from: "1", to: "3", price: 0 }],
-    sameDayWeightRanges: [{ from: "1", to: "3", price: 0 }],
-    overnightWeightRanges: [{ from: "1", to: "3", price: 0 }],
     driverCommission: [
       { category: "bicycle", costPerKm: 0, fixedCost: 0, driverCost: 0 },
       { category: "scooter", costPerKm: 0, fixedCost: 0, driverCost: 0 },
@@ -98,126 +86,45 @@ export default function TownPricingForm() {
               serviceName="Standard Service"
               serviceLabel="Standard Service Price"
               fieldName="standard"
-              weightRanges={values.standardWeightRanges}
-              selectedRows={selectedRows.standard}
-              onSelectionChange={(newSelection) => {
-                setSelectedRows({ ...selectedRows, standard: newSelection });
-              }}
-              onAddRange={() => {
-                const lastRange =
-                  values.standardWeightRanges[
-                    values.standardWeightRanges.length - 1
-                  ];
-                setFieldValue("standardWeightRanges", [
-                  ...values.standardWeightRanges,
-                  {
-                    from: lastRange.to,
-                    to: String(Number(lastRange.to) + 5),
-                    price: 0,
-                  },
-                ]);
-              }}
-              onDeleteSelected={() => {
-                const newRanges = values.standardWeightRanges.filter(
-                  (_, i) => !selectedRows.standard.has(i)
-                );
-                setFieldValue("standardWeightRanges", newRanges);
-                setSelectedRows({ ...selectedRows, standard: new Set() });
-              }}
-              fieldPrefix="standardWeightRanges"
               error={errors.standard}
               touched={touched.standard}
-              incrementValue={5}
               isExpanded={expandedSection === "standard"}
               onToggle={() =>
                 setExpandedSection(
                   expandedSection === "standard" ? null : "standard"
                 )
               }
+              showWeightRanges={false}
             />
 
             <ServiceTypeSection
               serviceName="Same Day Service"
               serviceLabel="Same Day Service Price"
               fieldName="sameDay"
-              weightRanges={values.sameDayWeightRanges}
-              selectedRows={selectedRows.sameDay}
-              onSelectionChange={(newSelection) => {
-                setSelectedRows({ ...selectedRows, sameDay: newSelection });
-              }}
-              onAddRange={() => {
-                const lastRange =
-                  values.sameDayWeightRanges[
-                    values.sameDayWeightRanges.length - 1
-                  ];
-                setFieldValue("sameDayWeightRanges", [
-                  ...values.sameDayWeightRanges,
-                  {
-                    from: lastRange.to,
-                    to: String(Number(lastRange.to) + 5),
-                    price: 0,
-                  },
-                ]);
-              }}
-              onDeleteSelected={() => {
-                const newRanges = values.sameDayWeightRanges.filter(
-                  (_, i) => !selectedRows.sameDay.has(i)
-                );
-                setFieldValue("sameDayWeightRanges", newRanges);
-                setSelectedRows({ ...selectedRows, sameDay: new Set() });
-              }}
-              fieldPrefix="sameDayWeightRanges"
               error={errors.sameDay}
               touched={touched.sameDay}
-              incrementValue={5}
               isExpanded={expandedSection === "sameDay"}
               onToggle={() =>
                 setExpandedSection(
                   expandedSection === "sameDay" ? null : "sameDay"
                 )
               }
+              showWeightRanges={false}
             />
 
             <ServiceTypeSection
               serviceName="Overnight Service"
               serviceLabel="Overnight Service Price"
               fieldName="overnight"
-              weightRanges={values.overnightWeightRanges}
-              selectedRows={selectedRows.overnight}
-              onSelectionChange={(newSelection) => {
-                setSelectedRows({ ...selectedRows, overnight: newSelection });
-              }}
-              onAddRange={() => {
-                const lastRange =
-                  values.overnightWeightRanges[
-                    values.overnightWeightRanges.length - 1
-                  ];
-                setFieldValue("overnightWeightRanges", [
-                  ...values.overnightWeightRanges,
-                  {
-                    from: lastRange.to,
-                    to: String(Number(lastRange.to) + 5),
-                    price: 0,
-                  },
-                ]);
-              }}
-              onDeleteSelected={() => {
-                const newRanges = values.overnightWeightRanges.filter(
-                  (_, i) => !selectedRows.overnight.has(i)
-                );
-                setFieldValue("overnightWeightRanges", newRanges);
-                setSelectedRows({ ...selectedRows, overnight: new Set() });
-              }}
-              fieldPrefix="overnightWeightRanges"
               error={errors.overnight}
               touched={touched.overnight}
-              incrementValue={5}
               isExpanded={expandedSection === "overnight"}
               onToggle={() =>
                 setExpandedSection(
                   expandedSection === "overnight" ? null : "overnight"
                 )
               }
+              showWeightRanges={false}
             />
 
             <AdditionalChargesSection

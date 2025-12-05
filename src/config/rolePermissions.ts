@@ -7,6 +7,7 @@ export const RoleName = {
   HR_MANAGER: "HR_MANAGER",
   CUSTOMER_MANAGER: "CUSTOMER_MANAGER",
   FINANCE_MANAGER: "FINANCE_MANAGER",
+  BRANCH_OFFICER: "BRANCH_OFFICER",
 } as const;
 
 export type RoleName = (typeof RoleName)[keyof typeof RoleName];
@@ -22,6 +23,7 @@ export const Permission = {
   DISPATCH: "dispatch",
   PRICING: "pricing",
   REPORT: "report",
+  BATCH: "batch",
 } as const;
 
 export type Permission = (typeof Permission)[keyof typeof Permission];
@@ -38,6 +40,7 @@ export const rolePermissions: Record<string, Permission[]> = {
     Permission.DISPATCH,
     Permission.PRICING,
     Permission.REPORT,
+    Permission.BATCH,
   ],
   [RoleName.HR_MANAGER]: [
     Permission.DASHBOARD,
@@ -60,11 +63,17 @@ export const rolePermissions: Record<string, Permission[]> = {
     Permission.ORDERS,
     Permission.CUSTOMER,
     Permission.REPORT,
+    Permission.BATCH,
   ],
   [RoleName.FINANCE_MANAGER]: [
     Permission.DASHBOARD,
     Permission.ORDERS,
     Permission.REPORT,
+  ],
+  [RoleName.BRANCH_OFFICER]: [
+    Permission.DASHBOARD,
+    Permission.ORDERS,
+    Permission.CUSTOMER,
   ],
 };
 

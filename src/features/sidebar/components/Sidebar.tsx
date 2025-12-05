@@ -200,7 +200,7 @@ export default function Sidebar() {
                       className={`text-lg sm:text-2xl ${
                         isActive
                           ? "text-white"
-                          : "text-black group-hover:text-white"
+                          : "text-blue-500 group-hover:text-white"
                       }`}
                     >
                       {icon}
@@ -219,7 +219,7 @@ export default function Sidebar() {
                   </NavLink>
                   {!isCollapsed && subItems && (
                     <FaChevronDown
-                      className={`text-xs transition-transform group-hover:text-white mr-1 sm:mr-2 ${
+                      className={`text-xs transition-transform text-blue-500 group-hover:text-white mr-1 sm:mr-2 ${
                         isExpanded ? "rotate-180" : ""
                       }`}
                     />
@@ -278,7 +278,7 @@ export default function Sidebar() {
                               </NavLink>
                               {hasSubsub && (
                                 <FaChevronDown
-                                  className={`text-xs transition-transform group-hover:text-white mr-1 sm:mr-2 ${
+                                  className={`text-xs transition-transform text-blue-500 group-hover:text-white mr-1 sm:mr-2 ${
                                     isSubExpanded ? "rotate-180" : ""
                                   }`}
                                 />

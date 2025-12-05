@@ -12,6 +12,7 @@ import CreateStaffPage from "./pages/Staff/CreateStaffPage";
 import OrdersPage from "./pages/orders/OrdersPage";
 import CreateOrder from "./features/orders/components/CreateOrder";
 import OrderDetails from "./features/orders/components/OrderDetails";
+import BatchPage from "./pages/batch/BatchPage";
 import DispatchPage from "./pages/DispatchPage";
 import FleetPage from "./pages/Fleet/FleetPage";
 import CreateVehiclePage from "./pages/Fleet/CreateVehiclePage";
@@ -207,6 +208,14 @@ const App = () => {
                 element={
                   <ProtectedRoute requiredPermission={Permission.ORDERS}>
                     <OrderDetails />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/batch"
+                element={
+                  <ProtectedRoute requiredPermission={Permission.BATCH}>
+                    <BatchPage />
                   </ProtectedRoute>
                 }
               />

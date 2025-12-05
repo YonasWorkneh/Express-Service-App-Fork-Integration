@@ -5,6 +5,7 @@ import {
   FaCodeBranch,
   FaUsersCog,
   FaTruckLoading,
+  FaLayerGroup,
 } from "react-icons/fa";
 import { IoPricetags } from "react-icons/io5";
 import { IoDocumentText } from "react-icons/io5";
@@ -34,6 +35,12 @@ const menuItems = [
     path: "/order",
     icon: <FaTruckLoading />,
     permission: Permission.ORDERS,
+  },
+  {
+    name: "Batch Management",
+    path: "/batch",
+    icon: <FaLayerGroup />,
+    permission: Permission.BATCH,
   },
   {
     name: "Dispatch Management",

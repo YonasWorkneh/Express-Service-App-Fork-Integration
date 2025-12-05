@@ -7,15 +7,15 @@ const SidebarLayout = () => {
   const isCollapsed = useAppSelector((state) => state.sidebar.isCollapsed);
 
   return (
-    <div className="flex">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar />
       <div
-        className={`min-h-screen w-full bg-white transition-all duration-300 ${
+        className={`flex flex-col w-full bg-white transition-all duration-300 h-screen overflow-hidden ${
           isCollapsed ? "ml-0 lg:ml-20" : "ml-0 lg:ml-80"
         }`}
       >
         <Header />
-        <div className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <div className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <Outlet />
         </div>
       </div>
